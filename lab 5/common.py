@@ -1,5 +1,4 @@
-"""Shared helpers for Lab 05 (segmentation). Only OpenCV, NumPy and Matplotlib (for display) are used."""
-import os
+
 import cv2
 import numpy as np
 import matplotlib

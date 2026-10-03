@@ -1,1 +1,58 @@
 
+class GroceryManager:
+    def __init__(self):
+        self.items = {}
+    def add_item(self, item, quantity, price):
+        if quantity <= 0:
+            print("Error: Quantity must be greater than 0.")
+            return
+        if price < 0:
+            print("Error: Price cannot be negative.")
+            return
+        if item in self.items:
+            self.items[item]["quantity"] += quantity
+        else:
+            self.items[item] = {
+                "quantity": quantity,
+                "price": price
+            }
+        print(f"{item} added successfully.")
+    def remove_item(self, item):
+        if item not in self.items:
+            print(f"Error: '{item}' does not exist.")
+            return
+        del self.items[item]
+        print(f"{item} removed successfully.")
+    def view_list(self):
+        if not self.items:
+            print("Grocery list is empty.")
+            return
+        print("\n----- Grocery List -----")
+        for item, details in self.items.items():
+            quantity = details["quantity"]
+            price = details["price"]
+            subtotal = quantity * price
+            print(
+                f"{item}: "
+                f"Quantity = {quantity}, "
+                f"Price = {price:.2f}, "
+                f"Subtotal = {subtotal:.2f}"
+            )
+    def calculate_total(self):
+        total = 0
+        for details in self.items.values():
+            total += details["quantity"] * details["price"]
+        return total
+
+grocery = GroceryManager()
+
+grocery.add_item("Milk", 2, 250)
+grocery.add_item("Bread", 1, 150)
+grocery.add_item("Eggs", 12, 30)
+grocery.view_list()
+print("\nTotal Cost:", grocery.calculate_total())
+grocery.remove_item("Bread")
+print("\nAfter removing Bread:")
+grocery.view_list()
+print("\nUpdated Total:", grocery.calculate_total())
+grocery.remove_item("Sugar")

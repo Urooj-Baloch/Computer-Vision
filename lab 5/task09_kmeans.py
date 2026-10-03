@@ -1,9 +1,8 @@
-"""Task 9 - K-Means colour segmentation (K = 2, 4, 6)."""
 from common import *
 
-img = load("messi5.jpg")                     # stand-in for dog.jpeg (the Packt link was unreachable)
+img = load("messi5.jpg")                    
 h, w, _ = img.shape
-data = np.float32(img.reshape(-1, 3))        # one 3-D (B,G,R) feature vector per pixel, float32 as cv2.kmeans requires
+data = np.float32(img.reshape(-1, 3))       
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 20, 0.5)
 
 results, lines = {}, ["TASK 9 - K-Means (criteria: 20 iterations or eps 0.5, attempts=5, KMEANS_PP_CENTERS)"]

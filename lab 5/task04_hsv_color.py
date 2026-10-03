@@ -1,19 +1,15 @@
-"""Task 4 - Colour-based segmentation in HSV (target: the green smarties)."""
 from common import *
 
 img = load("smarties.png")
-hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)       # OpenCV: H 0-179, S 0-255, V 0-255
-
-# Mask A - too restrictive: very narrow hue band and only the most saturated, brightest pixels
+hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)       
 lower_a, upper_a = np.array([58, 230, 230]), np.array([64, 255, 255])
-# Mask B - final: green hue band, moderate saturation / value lower bounds (keeps shaded and highlighted parts)
 lower_b, upper_b = np.array([40, 80, 60]), np.array([85, 255, 255])
 
 mask_a = cv2.inRange(hsv, lower_a, upper_a)
 mask_b = cv2.inRange(hsv, lower_b, upper_b)
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
-mask_b_clean = cv2.morphologyEx(mask_b, cv2.MORPH_OPEN, kernel)       # remove isolated specks
-mask_b_clean = cv2.morphologyEx(mask_b_clean, cv2.MORPH_CLOSE, kernel) # fill the small specular-highlight holes
+mask_b_clean = cv2.morphologyEx(mask_b, cv2.MORPH_OPEN, kernel)      
+mask_b_clean = cv2.morphologyEx(mask_b_clean, cv2.MORPH_CLOSE, kernel) 
 
 ext_a = cv2.bitwise_and(img, img, mask=mask_a)
 ext_b = cv2.bitwise_and(img, img, mask=mask_b_clean)

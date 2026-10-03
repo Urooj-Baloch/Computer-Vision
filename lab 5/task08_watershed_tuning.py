@@ -1,12 +1,9 @@
-"""Task 8 - Tuning the distance-transform threshold (sure foreground) of the watershed pipeline."""
 from watershed_pipeline import *
 import csv
 
 img = load("water_coins.jpg")
-EXPECTED = 24                      # coins counted by eye on outputs/task07_final_numbered.png
-FRACS = [0.2, 0.4, 0.6, 0.9, 0.98]  # sure-foreground threshold as a fraction of max(distance transform)
-
-
+EXPECTED = 24                     
+FRACS = [0.2, 0.4, 0.6, 0.9, 0.98]  
 def observe(f, r):
     if r["n_regions"] < EXPECTED and f < 0.5:
         return f"Under-segmented: coins merged into {r['n_regions']} blob(s) (sure-fg touches neighbours)"
@@ -25,7 +22,6 @@ for i, f in enumerate(FRACS, 1):
     imgs.append(r["overlay"]); titles.append(f"Exp {i}: thr={thr:.1f}px ({r['n_regions']} regions)")
     save(f"task08_exp{i}_frac{f}.png", r["overlay"])
 
-# scan the whole range to find the parameter range that yields the right count
 good = []
 for f in np.arange(0.05, 0.995, 0.01):
     r = run_watershed(img, float(f))

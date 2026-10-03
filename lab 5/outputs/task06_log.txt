@@ -1,0 +1,7 @@
+TASK 6 - region growing (8-connectivity, reference = mean of 3x3 around seed, image smoothed 3x3)
+  seed=(100, 75) ref_intensity=151.9 T=10 -> region size   350 px ( 2.1% of image)
+  seed=(100, 75) ref_intensity=151.9 T=25 -> region size   727 px ( 4.4% of image)
+  seed=(100, 75) ref_intensity=151.9 T=45 -> region size  2360 px (14.4% of image)
+  seed=(118, 45) ref_intensity=126.8 T=10 -> region size   570 px ( 3.5% of image)
+  seed=(118, 45) ref_intensity=126.8 T=25 -> region size  1531 px ( 9.3% of image)
+  seed=(118, 45) ref_intensity=126.8 T=45 -> region size  2639 px (16.1% of image)

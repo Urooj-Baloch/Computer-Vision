@@ -1,0 +1,5 @@
+TASK 5 - Canny results (L1 gradient magnitude, aperture 3, GaussianBlur 5x5 sigma 1.4)
+  low= 20 high= 60: edge px= 3535  strong px= 3403  weak-but-kept px=  132  components=64  tiny comps(<10px)=17
+  low= 60 high=150: edge px= 3047  strong px= 2857  weak-but-kept px=  190  components=32  tiny comps(<10px)=1
+  low=150 high=300: edge px= 2615  strong px= 1953  weak-but-kept px=  662  components=20  tiny comps(<10px)=0
+  edge px present with ((20, 60)) but lost with ((150, 300)): 920

@@ -1,0 +1,9 @@
+TASK 1 - parameters and measurements
+Global thresholds tested: [70, 110, 150] (on Gaussian-blurred 3x3 grayscale)
+Adaptive: ADAPTIVE_THRESH_GAUSSIAN_C, blockSize=25, C=10
+Mean paper brightness left/middle/right third: 81, 99, 125
+Ink (black) % in left/middle/right third:
+  Global T=70   :  36.0,  13.1,   5.7
+  Global T=110  :  88.1,  61.6,  24.0
+  Global T=150  :  98.9, 100.0,  92.5
+  Adaptive      :  11.7,  15.3,  16.8

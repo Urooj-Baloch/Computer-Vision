@@ -1,0 +1,5 @@
+TASK 4 - HSV parameters
+Restrictive mask: lower=[58, 230, 230] upper=[64, 255, 255] -> 61 px, 0 objects (>=100 px)
+Final mask      : lower=[40, 80, 60] upper=[85, 255, 255] -> 5385 px, 3 objects (>=100 px)
+Justification: green candy hue is about 60 in OpenCV scale; the white background has S close to 0 so S>=80 removes it;
+V>=60 drops dark pixels (the brown candy / shadows).

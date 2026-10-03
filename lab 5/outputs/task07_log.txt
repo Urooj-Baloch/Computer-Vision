@@ -1,0 +1,5 @@
+TASK 7 - marker-based watershed
+Pre-processing: Gaussian 5x5; Otsu inverse threshold; opening 3x3 x2; sure-bg dilate 3x; distance transform L2/5; sure-fg = 0.5 * max
+Connected white regions in thresholded mask (naive count): 1
+Foreground markers found: 24
+Regions after watershed (separated coins): 24

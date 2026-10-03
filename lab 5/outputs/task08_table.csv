@@ -1,0 +1,6 @@
+Experiment,Distance Threshold,Foreground,Regions,Observed Result
+1,0.20 x max = 4.8 px,1,1,Under-segmented: coins merged into 1 blob(s) (sure-fg touches neighbours)
+2,0.40 x max = 9.6 px,7,7,Under-segmented: coins merged into 7 blob(s) (sure-fg touches neighbours)
+3,0.60 x max = 14.4 px,24,24,"All coins separated, boundaries on coin edges"
+4,0.90 x max = 21.6 px,24,24,"All coins separated, boundaries on coin edges"
+5,0.98 x max = 23.5 px,20,20,Over-strict: 4 smaller coins lose their marker and are missed

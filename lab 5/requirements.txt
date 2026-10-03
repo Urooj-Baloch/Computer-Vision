@@ -1,0 +1,4 @@
+opencv-python
+numpy
+matplotlib
+pydicom   # only needed by prepare_images.py

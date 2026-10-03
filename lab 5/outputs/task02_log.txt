@@ -1,0 +1,20 @@
+TASK 2 - parameter grid (ink% = share of black pixels, specks = tiny isolated black blobs)
+method    block   C   ink%  specks
+Mean          5   2   17.7    1997
+Mean          5  10    6.9     416
+Mean          5  25    0.3     197
+Mean         25   2   26.3     341
+Mean         25  10   17.7      32
+Mean         25  25    9.5     124
+Mean        101   2   26.4      50
+Mean        101  10   19.7      55
+Mean        101  25   12.0      83
+Gaussian      5   2   14.3     691
+Gaussian      5  10    2.0     491
+Gaussian      5  25    0.0       4
+Gaussian     25   2   23.8     703
+Gaussian     25  10   14.6      40
+Gaussian     25  25    6.3     193
+Gaussian    101   2   25.3     104
+Gaussian    101  10   18.6      38
+Gaussian    101  25   10.8      79

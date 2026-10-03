@@ -1,0 +1,6 @@
+TASK 3 - Otsu automatically selected thresholds
+  Plain grayscale       : T =  162.0   foreground =  55.9%
+  Gaussian blur 5x5     : T =  162.0   foreground =  56.5%
+  Darker (beta = -50)   : T =  112.0   foreground =  55.9%
+  Low contrast (alpha = 0.6): T =   97.0   foreground =  55.9%
+  CLAHE                 : T =  158.0   foreground =  55.0%

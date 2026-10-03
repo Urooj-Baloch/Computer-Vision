@@ -1,0 +1,25 @@
+TASK 10 - three methods on smarties.png (14 candies are visible, 2 of them cut by the border)
+Method 1 Otsu(gray, blur 5): T=177, objects=13, mask area=19.7%
+Method 2 HSV (S>=60, V>=30, open+close 5x5): objects=11, mask area=20.1%
+Method 3 K-Means (K=4, background = brightest cluster): objects=11, mask area=19.9%
+Interior holes (>=3 px) / stray specks (<60 px): Otsu 14 / 1, HSV 1 / 0, K-Means 2 / 1
+Agreement (IoU): M1-M2 0.94, M1-M3 0.96, M2-M3 0.96
+
+Parameter sensitivity: IoU of the changed mask with the default mask of the same method (1.00 = no effect)
+  Otsu threshold -40    : IoU = 0.73
+  Otsu threshold -20    : IoU = 0.91
+  Otsu threshold +20    : IoU = 0.96
+  Otsu threshold +40    : IoU = 0.92
+  Otsu blur 1           : IoU = 0.98
+  Otsu blur 11          : IoU = 0.97
+  HSV S_min=30          : IoU = 0.97
+  HSV S_min=100         : IoU = 0.96
+  HSV S_min=150         : IoU = 0.91
+  HSV V_min=10          : IoU = 0.99
+  HSV V_min=80          : IoU = 0.91
+  HSV V_min=120         : IoU = 0.91
+  K-Means K=2           : IoU = 0.98
+  K-Means K=3           : IoU = 1.00
+  K-Means K=6           : IoU = 0.96
+  K-Means seed=1        : IoU = 1.00
+  K-Means seed=2        : IoU = 1.00

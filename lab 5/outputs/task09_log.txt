@@ -1,0 +1,16 @@
+TASK 9 - K-Means (criteria: 20 iterations or eps 0.5, attempts=5, KMEANS_PP_CENTERS)
+K=2: clusters=2, unique colours 59147 -> 2 (100.00% fewer), PSNR vs original = 17.5 dB
+      cluster 0: RGB=(117,128, 95)  covers  50.4% of pixels
+      cluster 1: RGB=( 46, 42, 49)  covers  49.6% of pixels
+K=4: clusters=4, unique colours 59147 -> 4 (99.99% fewer), PSNR vs original = 20.9 dB
+      cluster 0: RGB=( 35, 34, 38)  covers  36.3% of pixels
+      cluster 3: RGB=( 94, 79, 90)  covers  31.3% of pixels
+      cluster 2: RGB=(101,142, 51)  covers  20.4% of pixels
+      cluster 1: RGB=(160,163,160)  covers  12.0% of pixels
+K=6: clusters=6, unique colours 59147 -> 6 (99.99% fewer), PSNR vs original = 22.7 dB
+      cluster 5: RGB=( 27, 28, 31)  covers  26.3% of pixels
+      cluster 2: RGB=( 68, 63, 68)  covers  24.5% of pixels
+      cluster 3: RGB=(101,142, 51)  covers  20.2% of pixels
+      cluster 4: RGB=(101,104,117)  covers  16.0% of pixels
+      cluster 1: RGB=(170,172,167)  covers   9.3% of pixels
+      cluster 0: RGB=(154, 40, 67)  covers   3.7% of pixels

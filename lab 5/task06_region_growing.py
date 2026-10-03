@@ -1,9 +1,9 @@
-"""Task 6 - Region growing on a brain MRI slice (pure NumPy/OpenCV, no library segmentation)."""
+
 from common import *
 from collections import deque
 
 gray = load("brain.png", cv2.IMREAD_GRAYSCALE)
-smooth = cv2.GaussianBlur(gray, (3, 3), 0)          # mild smoothing so single noisy pixels do not stop the growth
+smooth = cv2.GaussianBlur(gray, (3, 3), 0)         
 
 
 def region_grow(im, seed, thr):

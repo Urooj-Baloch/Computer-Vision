@@ -1,29 +1,19 @@
-"""Task 10 - Three segmentation approaches on one challenging image (smarties.png): find all candies."""
 from common import *
 
 img = load("smarties.png")
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 k3 = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
-
-
 def n_objects(m, min_area=150):
     n, _, st, _ = cv2.connectedComponentsWithStats(m)
     return int(np.sum(st[1:, cv2.CC_STAT_AREA] >= min_area))
-
-
-# ---- Method 1: Otsu thresholding on grayscale -------------------------------------------------
 def m1(blur=5, offset=0):
     g = cv2.GaussianBlur(gray, (blur, blur), 0) if blur > 1 else gray
     t, _ = cv2.threshold(g, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
     return cv2.threshold(g, t + offset, 255, cv2.THRESH_BINARY_INV)[1], t
-
-# ---- Method 2: colour (HSV) thresholding: candies = pixels with enough saturation -------------
 def m2(s_min=60, v_min=30):
     m = cv2.inRange(hsv, np.array([0, s_min, v_min]), np.array([179, 255, 255]))
     return cv2.morphologyEx(cv2.morphologyEx(m, cv2.MORPH_OPEN, k3), cv2.MORPH_CLOSE, k3)
-
-# ---- Method 3: K-Means on colour; candy = every cluster except the brightest (white background) --
 def m3(K=4, seed=0):
     cv2.setRNGSeed(seed)
     data = np.float32(img.reshape(-1, 3))
@@ -31,8 +21,6 @@ def m3(K=4, seed=0):
     bg = int(np.argmax(cen.sum(axis=1)))
     m = np.uint8((lab.flatten() != bg).reshape(gray.shape)) * 255
     return cv2.morphologyEx(cv2.morphologyEx(m, cv2.MORPH_OPEN, k3), cv2.MORPH_CLOSE, k3)
-
-
 def n_holes(m, min_area=3):
     """Interior holes inside objects (e.g. specular highlights that fell below the threshold)."""
     cnts, hier = cv2.findContours(m, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)

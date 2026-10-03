@@ -1,18 +1,15 @@
-"""Task 1 - Automated inspection of a document under uneven lighting (global vs adaptive threshold)."""
+
 from common import *
 
 gray = load("sudoku.png", cv2.IMREAD_GRAYSCALE)
-blur = cv2.GaussianBlur(gray, (3, 3), 0)      # light denoising before thresholding
+blur = cv2.GaussianBlur(gray, (3, 3), 0)     
 
-# three global thresholds (THRESH_BINARY: ink -> 0/black, paper -> 255/white)
 T_VALUES = [70, 110, 150]
 global_masks = [cv2.threshold(blur, t, 255, cv2.THRESH_BINARY)[1] for t in T_VALUES]
 
-# adaptive threshold: Gaussian-weighted 25x25 neighbourhood, constant C = 10
 BLOCK, C = 25, 10
 adaptive = cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, BLOCK, C)
 
-# quantify the effect of uneven lighting: ink fraction in left / right thirds of the page
 h, w = gray.shape
 def ink_fraction(mask, x0, x1):
     return float(np.mean(mask[:, x0:x1] == 0)) * 100

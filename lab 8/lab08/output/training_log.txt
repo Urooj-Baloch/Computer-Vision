@@ -1,0 +1,42 @@
+Images: 364 | raccoon boxes: 217 | kangaroo boxes: 266
+Train images: 291 | test images: 73
+Premature end of JPEG file
+Selective search on 364 images took 57s
+Average proposals per image: 338
+Premature end of JPEG file
+CNN training crops: 20165 | per class: {'background': 15193, 'raccoon': 2747, 'kangaroo': 2225}
+epoch  1  loss 1.2135  train acc 0.647  val acc 0.737
+epoch  2  loss 0.6314  train acc 0.729  val acc 0.737
+epoch  3  loss 0.5512  train acc 0.769  val acc 0.830
+epoch  4  loss 0.4492  train acc 0.811  val acc 0.866
+epoch  5  loss 0.3912  train acc 0.832  val acc 0.887
+epoch  6  loss 0.3376  train acc 0.857  val acc 0.879
+epoch  7  loss 0.2874  train acc 0.878  val acc 0.795
+epoch  8  loss 0.2503  train acc 0.887  val acc 0.894
+epoch  9  loss 0.2242  train acc 0.897  val acc 0.920
+epoch 10  loss 0.1966  train acc 0.908  val acc 0.924
+epoch 11  loss 0.1731  train acc 0.922  val acc 0.927
+epoch 12  loss 0.1537  train acc 0.927  val acc 0.914
+epoch 13  loss 0.1362  train acc 0.935  val acc 0.926
+epoch 14  loss 0.1378  train acc 0.936  val acc 0.930
+Trained one linear SVM per class on CNN features
+Premature end of JPEG file
+Trained bounding-box regressors: {'raccoon': 1790, 'kangaroo': 1547}
+Per-image inference: proposals 0.33s, total 0.69s
+{
+  "raccoon": {
+    "AP50_with_bbox_regression": 0.6995164271948554,
+    "AP50_without_bbox_regression": 0.6430976761545513
+  },
+  "kangaroo": {
+    "AP50_with_bbox_regression": 0.36243669612207613,
+    "AP50_without_bbox_regression": 0.34605829332332133
+  },
+  "mAP50_with_bbox_regression": 0.5309765616584657,
+  "mAP50_without_bbox_regression": 0.4945779847389363,
+  "avg_seconds_per_image_total": 0.6934626918949492,
+  "avg_seconds_per_image_proposals": 0.33035816885020636,
+  "avg_proposals_per_image": 337.86813186813185,
+  "train_images": 291,
+  "test_images": 73
+}

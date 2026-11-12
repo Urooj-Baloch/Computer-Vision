@@ -1,0 +1,17 @@
+{
+  "raccoon": {
+    "AP50_with_bbox_regression": 0.6995164271948554,
+    "AP50_without_bbox_regression": 0.6430976761545513
+  },
+  "kangaroo": {
+    "AP50_with_bbox_regression": 0.36243669612207613,
+    "AP50_without_bbox_regression": 0.34605829332332133
+  },
+  "mAP50_with_bbox_regression": 0.5309765616584657,
+  "mAP50_without_bbox_regression": 0.4945779847389363,
+  "avg_seconds_per_image_total": 0.6747475748192774,
+  "avg_seconds_per_image_proposals": 0.32451806003100253,
+  "avg_proposals_per_image": 337.86813186813185,
+  "train_images": 291,
+  "test_images": 73
+}
